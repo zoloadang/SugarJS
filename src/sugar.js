@@ -117,7 +117,7 @@
 	Sugar.inlineCss = (function() {
 	
 	  var isLoaded = false,
-		   css = function(rules) {
+		  css = function(rules) {
 				var styleElement = document.createElement('style');
 				styleElement.type = 'text/css';
 				
@@ -521,7 +521,7 @@
 		wrapper.prototype[name] = function() {
 		  	var args = slice.call(arguments);	//复制参数
 		  	unshift.call(args, this._wrapped);	//将Sugar()中的参数添加到args的首位
-		  	return result(func.apply(Sugar, args), this._chain); //Sugar(arg).chain().method()
+		  	return result(func.apply(Sugar, args), this._chain); //Sugar(arg).chain().method(),将前面方法返回值作为参数传给下个参数
 		};
 	};
   
